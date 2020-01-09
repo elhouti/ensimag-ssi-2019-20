@@ -16,7 +16,7 @@ Lorsque l'image soit lancé sur un conteneur docker, visiter localhost:8080
 
 ![](index.png)
 
-Étape 2: Lancement du script "exploit.sh", ce dernier injecte un malicious code dans le serveur distant (dans notre cas ça sera "localhost:8080", puisque l'application est exécuter sur une image docker locale) sous la forme d'un fichier php que nous avons l'appelé "backdoor.php", il va nous donner la main d'éxécuter les commandes sur un shell distant.
+Étape 2: Lancement du script "exploit.sh", ce dernier injecte un malicious code dans le serveur distant (dans notre cas ça sera "localhost:8080", puisque l'application est exécuté sur une image docker locale) sous la forme d'un fichier php que nous avons l'appelé "backdoor.php" en exploitant La faille de PHPMailer qui ne stérilise pas les valeurs de courrier électronique avant l'exécution, et par conséquent il va nous donner la main d'éxécuter les commandes à distant (comme un Remot shell).
 ```
 $ bash exploit.sh localhost:8080
 ```
