@@ -44,7 +44,7 @@ RemoteShell> exit
 
 C'est intéressant, mais pour tester quelque chose de plus concrète, lancant le script "deface.sh" qui exécute une commande sur le shell distant qui permet d'écraser le contenu du ficher "index.php" par une page noire contant le mot "defaced".
 ```
-$ bash deface.sh localhost:8080
+$ bash second_use_case.sh localhost:8080
 ```
 output 
 
