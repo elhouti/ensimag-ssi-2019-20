@@ -8,10 +8,11 @@ cd ensimag-ssi-2019-20
 
 ## Reproduire la vulnérabilité 
 
-Étape  1: Tout d'abord on va utiliser une image docker qui permet de lancer une simple application web d'un formulaire (index.php)
+Étape  1: Tout d'abord on va utiliser une image docker qui permet de lancer une application web contenant un formulaire d'envoie de mails avec la librairie PHPMailer(voir index.php) sur un container.
 ```
-$ docker run --rm -it -p 8080:80 vulnerables/cve-2016-10033
+$ docker run --rm -it -p 8080:80 vulnerables/cve-2016-10033 &
 ```
+Lorsque l'image soit lancé sur un conteneur docker, visiter localhost:8080
 
 Étape 2: Lancement du script "exploit.sh", ce dernier injecte un malicious code dans le serveur distant (dans notre cas ça sera "localhost:8080", puisque l'application est exécuter sur une image docker locale) sous la forme d'un fichier php que nous avons l'appelé "backdoor.php", il va nous donner la main d'éxécuter les commandes sur un shell distant.
 ```
