@@ -2,10 +2,8 @@
 
 ## Getting Started
 ```
-$ git clone "https://github.com/elhouti/ensimag-ssi-2019-20.git"
-```
-```
-$ cd ensimag-ssi-2019-20
+$ git clone "https://github.com/elhouti/ensimag-ssi-2019-20.git" && \
+cd ensimag-ssi-2019-20
 ```
 
 ## Reproduire la vulnérabilité 
