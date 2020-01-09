@@ -1,4 +1,4 @@
-# ensimag-ssi-2019-2020
+# Ensimag-ssi-2019-2020
 
 ## Getting Started
 ```
