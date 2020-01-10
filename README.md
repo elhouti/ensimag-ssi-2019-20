@@ -13,7 +13,7 @@ Si jamais vous ne disposez pas de docker sur votre machine (le cas des machines 
 ```
 $ docker run --rm -it -p 8080:80 vulnerables/cve-2016-10033 &
 ```
-Lorsque l'image soit lancé sur un conteneur docker, visiter localhost:8080
+Lorsque l'image soit lancé sur le conteneur docker, visiter localhost:8080
 
 ![](index.png)
 
