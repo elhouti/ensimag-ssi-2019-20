@@ -1,6 +1,5 @@
 #!/bin/bash
-# CVE-2016-10033 exploit by opsxcq
-# https://github.com/opsxcq/exploit-CVE-2016-10033
+# CVE-2016-10033 exploit
 
 echo '[+] exemple d éxploitation CVE-2016-10033'
 
