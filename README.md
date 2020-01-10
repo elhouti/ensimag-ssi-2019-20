@@ -16,11 +16,11 @@ Lorsque l'image soit lancé sur un conteneur docker, visiter localhost:8080
 
 ![](index.png)
 
-Étape 2: Lancement du script "exploit.sh", ce dernier injecte un malicious code dans le serveur distant (dans notre cas ça sera "localhost:8080", puisque l'application est exécuté sur une image docker locale) sous la forme d'un fichier php que nous avons l'appelé "backdoor.php" en exploitant La faille de PHPMailer qui ne stérilise pas les valeurs de courrier électronique avant l'exécution, et par conséquent il va nous donner la main d'éxécuter les commandes à distant (comme un Remot shell).
+Étape 2: Lancement du script "exploit.sh", ce dernier injecte un malicious code dans le serveur distant (dans notre cas ça sera "localhost:8080", puisque l'application est exécuté sur une image docker locale) sous la forme d'un fichier php que nous avons l'appelé "backdoor.php" en exploitant La faille de PHPMailer qui ne stérilise pas les valeurs de courrier électronique avant l'exécution, et par conséquent il va nous donner la main d'éxécuter les commandes à distance (Remot shell).
 ```
 $ bash exploit.sh localhost:8080
 ```
-output:
+output: (ls, ls vulnerable, pwd, cat /etc/passwd sont exécuté sur le seveur distant)
 ```
 [+] exemple d éxploitation CVE-2016-10033
 [+] Lancement de l éxploitation localhost:8080
@@ -42,7 +42,7 @@ RemoteShell> exit
 [+] Sortie
 ```
 
-C'est intéressant, mais pour tester quelque chose de plus concrète, lancant le script "deface.sh" qui exécute une commande sur le shell distant qui permet d'écraser le contenu du ficher "index.php" par une page noire contant le mot "defaced".
+C'est intéressant, mais pour tester quelque chose de plus concrète, lancant le script "second_use_case.sh" qui exécute une commande sur le shell distant qui permet d'écraser le contenu du ficher "index.php" par une page noire contant le mot "defaced".
 ```
 $ bash second_use_case.sh localhost:8080
 ```
