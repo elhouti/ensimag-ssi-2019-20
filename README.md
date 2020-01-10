@@ -9,6 +9,7 @@ cd ensimag-ssi-2019-20
 ## Reproduire la vulnérabilité 
 
 Étape  1: Tout d'abord on va utiliser une image docker qui permet de lancer une application web contenant un formulaire d'envoie de mails avec la librairie PHPMailer(voir index.php) sur un container.
+Si jamais vous ne disposez pas de docker sur votre machine (le cas des machines de l'école), [Install Docker on Linux](https://runnable.com/docker/install-docker-on-linux) 
 ```
 $ docker run --rm -it -p 8080:80 vulnerables/cve-2016-10033 &
 ```
