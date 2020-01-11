@@ -43,6 +43,7 @@ RemoteShell> exit
 [+] Sortie
 ```
 En fait, ce script utilise implicitement le formulaire, et donc pour reproduire la meme chose manuellement avec le formulaire on remplissant les champs de formulaire par les données suivant:
+![](manuelle1.png)
 
 
 Étape3: C'est intéressant, mais pour tester quelque chose de plus concrète, lancant le script "second_use_case.sh" qui exécute une commande sur le shell distant qui permet d'écraser le contenu du ficher "index.php" par une page noire contant le mot "defaced".
